@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/space_8"
+        android:background="@color/creamCheeseFrosting"
+        tools:context=".fragment.PilihanAktorFragment">
+
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+        <TextView
+                android:id="@+id/tv_aktor_kasus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_16"
+                android:layout_marginStart="@dimen/space_8"
+                android:layout_marginEnd="@dimen/space_8"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/font_title_size"
+                android:textStyle="bold" />
+
+        <TextView
+                android:id="@+id/tv_kasus1"
+                android:layout_below="@id/tv_aktor_kasus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_16"
+                android:layout_marginStart="@dimen/space_8"
+                android:layout_marginEnd="@dimen/space_8"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/font_title_size"
+                android:textStyle="bold" />
+
+        <View
+                android:id="@+id/viewline1"
+                android:layout_below="@+id/tv_kasus1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_1"
+                android:layout_marginBottom="@dimen/space_8"
+                android:background="@color/colorLine" />
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recylce_kasus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/viewline1"
+                tools:listitem="@layout/item_row2"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recylce_kasus2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recylce_kasus"
+                tools:listitem="@layout/item_row"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+        <LinearLayout
+                android:id="@+id/linear_layout_btn"
+                android:layout_below="@id/recylce_kasus2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <Button
+                    android:id="@+id/btn_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/space_8"
+                    android:background="@drawable/btn_rounded"
+                    android:text="yes"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="@color/milkSoda"/>
+            <Button
+                    android:id="@+id/btn_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/space_8"
+                    android:background="@drawable/btn_rounded"
+                    android:text="no"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:textColor="@color/milkSoda"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <ProgressBar
+            android:id="@+id/progress_bar_kasus"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+</RelativeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_rounded"
+        android:layout_marginHorizontal="@dimen/space_4"
+        android:layout_marginVertical="@dimen/space_2"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+    <TextView
+            android:id="@+id/tv_pertanyaan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_8"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/font_title_size"
+            android:textStyle="bold"
+            android:text="@string/pertanyaan"/>
+
+    <RadioGroup
+            android:layout_marginHorizontal="@dimen/space_8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/space_8">
+
+        <RadioButton
+                android:id="@+id/rb_iya"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Iya"
+                android:textSize="@dimen/font_body_size" />
+
+        <RadioButton
+                android:id="@+id/rb_tidak"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_body_size"
+                android:text="Tidak"/>
+    </RadioGroup>
+</LinearLayout>

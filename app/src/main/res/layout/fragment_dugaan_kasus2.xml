@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:padding="@dimen/space_8"
+        android:background="@color/creamCheeseFrosting"
+        tools:context=".fragment.DugaanKasusFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+            android:id="@+id/tv_dugaan_kasus2"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textSize="@dimen/font_title_size"
+            android:layout_marginTop="@dimen/space_16"
+            android:layout_marginStart="@dimen/space_8"
+            android:layout_marginEnd="@dimen/space_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:text="@string/hello_blank_fragment" />
+
+    <View
+            android:id="@+id/viewline"
+            android:layout_below="@+id/tv_dugaan_kasus2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_1"
+            android:layout_marginBottom="@dimen/space_8"
+            android:background="@color/colorLine" />
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recylce_dugaan_kasus2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/viewline"
+            tools:listitem="@layout/item_row"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    <ProgressBar
+            android:id="@+id/progress_bar_dugaan_kasus2"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+</RelativeLayout>

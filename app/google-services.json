@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "920011299043",
+    "project_id": "sistem-pakar-hukum-kesehatan",
+    "storage_bucket": "sistem-pakar-hukum-kesehatan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:920011299043:android:d82f760a1b5a0eab42cdd6",
+        "android_client_info": {
+          "package_name": "com.example.sispakhukumkesehatan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "920011299043-i6u3054tp3aus307bn1vkm334vfgkg34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA74HQssFWTvNyLnbGpnIxdN9rmYF5Z6gE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "920011299043-i6u3054tp3aus307bn1vkm334vfgkg34.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Sistem Pakar Hukum Kesehatan</string>
+    <string name="tentang_aplikasi">Tentang Aplikasi</string>
+    <string name="bantuan">Bantuan</string>
+    <string name="identifikasi">Identifikasi</string>
+    <string name="undang_undang">Undang-Undang</string>
+    <string name="korporasi">Korporasi</string>
+    <string name="pimpinan_fasilitas_pelayanan_kesehatan">Pimpinan / Fasilitas Pelayanan Kesehatan</string>
+    <string name="dokter">Dokter</string>
+    <string name="perawat">Perawat</string>
+    <string name="tenaga_kesehatan">Tenaga Kesehatan</string>
+    <string name="orang_lain">Orang Lain</string>
+    <string name="hal_hal_terkait_sengketa_kesehatan">Hal-hal terkait sengketa kesehatan</string>
+    <string name="siapakah_yang_menjadi_pelaku_sengketa_kesehatan">Siapakah yang menjadi pelaku sengketa kesehatan?</string>
+    <string name="pertolongan_pertama_darurat">Pertolongan pertama / darurat</string>
+    <string name="izin">Izin</string>
+    <string name="organ_jaringan_tubuh">Organ / jaringan tubuh</string>
+    <string name="farmasi_alat_kesehatan">Farmasi / alat kesehatan</string>
+    <string name="rokok">Rokok</string>
+    <string name="air_susu_ibu_asi">Air Susu Ibu (ASI)</string>
+    <string name="rekam_medis">Rekam medis</string>
+    <string name="surat_tanda_registrasi_str">Surat Tanda Registrasi (STR)</string>
+    <string name="surat_izin_praktik_sip">Surat Izin Praktik (SIP)</string>
+    <string name="papan_nama">Papan nama</string>
+    <string name="pelayanan_medis_kesehatan">Pelayanan medis / kesehatan</string>
+    <string name="evaluasi_kompetensi">Evaluasi kompetensi</string>
+    <string name="kelalaian">Kelalaian</string>
+    <string name="bedah_plastik">Bedah Plastik</string>
+    <string name="aborsi">Aborsi</string>
+    <string name="darah">Darah</string>
+    <string name="kerahasiaan">Kerahasiaan</string>
+    <string name="rujukan">Rujukan</string>
+    <string name="persetujuan">Persetujuan</string>
+    <string name="akibat_dari_sengketa_kesehatan">Akibat dari sengketa kesehatan</string>
+    <string name="kecacatan">Kecacatan</string>
+    <string name="kematian">Kematian</string>
+    <string name="kerugian_harta_benda">Kerugian harta benda</string>
+    <string name="luka_berat">Luka berat</string>
+    <string name="lainnya">Lainnya</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="p01">Tidak memberikan pertolongan pertama terhadap pasien yang dalam keadaan gawat darurat</string>
+    <string name="ya">Ya</string>
+    <string name="tidak">Tidak</string>
+    <string name="pertanyaan">pertanyaan</string>
+    <string name="pelayanan_kesehatan_traditional">Pelayanan kesehatan traditional</string>
+    <string name="title_activity_konsultasi">KonsultasiActivity</string>
+    <string name="hello_world">Hello Square World!</string>
+    <string name="title_activity_hasil_identifikasi">HasilIdentifikasiActivity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>

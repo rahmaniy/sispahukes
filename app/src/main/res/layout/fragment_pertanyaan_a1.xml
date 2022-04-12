@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        tools:context=".fragment.PertanyaanA1Fragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_pertanyaan_a1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/nextPertanyaanSebab"
+            android:layout_marginTop="@dimen/space_8"
+            android:background="@color/colorPrimary"
+            tools:listitem="@layout/item_row_pertanyaan"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <Button
+            android:id="@+id/nextPertanyaanSebab"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_56"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/space_8"
+            android:background="@drawable/background_rounded"
+            android:text="Next"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark" />
+
+</RelativeLayout>

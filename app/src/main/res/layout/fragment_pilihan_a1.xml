@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/creamCheeseFrosting"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".fragment.PilihanA1Fragment">
+
+    <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:scrollingCache="true"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="32dp">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginTop="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                    android:id="@+id/tv_kata_kunci"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:text="@string/hal_hal_terkait_sengketa_kesehatan"
+                    android:textAlignment="viewStart"
+                    android:textSize="@dimen/font_title_size"
+                    android:textStyle="bold" />
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1"
+                    android:background="@color/colorLine" />
+
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:orientation="vertical">
+
+                <CheckBox
+                        android:id="@+id/cb_s01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/pertolongan_pertama_darurat"
+                        android:textSize="@dimen/font_body_size" />
+
+                <CheckBox
+                        android:id="@+id/cb_s02"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/izin"
+                        android:textSize="@dimen/font_body_size" />
+
+                <!--CheckBox
+                        android:id="@+id/cb_s02_s11"
+                        android:layout_marginLeft="@dimen/space_32"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:visibility="invisible"
+                        android:text="@string/pelayanan_kesehatan_traditional"
+                        android:textSize="@dimen/font_body_size" /-->
+
+                <CheckBox
+                        android:id="@+id/cb_s03"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/organ_jaringan_tubuh"
+                        android:textSize="@dimen/font_body_size" />
+
+                <CheckBox
+                        android:id="@+id/cb_s04"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/farmasi_alat_kesehatan"
+                        android:textSize="@dimen/font_body_size" />
+
+                <CheckBox
+                        android:id="@+id/cb_s05"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/rokok"
+                        android:textSize="@dimen/font_body_size" />
+
+                <CheckBox
+                        android:id="@+id/cb_s06"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/air_susu_ibu_asi"
+                        android:textSize="@dimen/font_body_size" />
+
+                <CheckBox
+                        android:id="@+id/cb_s09"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/surat_izin_praktik_sip"
+                        android:textSize="@dimen/font_body_size" />
+
+                <CheckBox
+                        android:id="@+id/cb_s11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/pelayanan_medis_kesehatan"
+                        android:textSize="@dimen/font_body_size" />
+
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/tv_akibat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:text="@string/akibat_dari_sengketa_kesehatan"
+                    android:textAlignment="viewStart"
+                    android:textSize="@dimen/font_title_size"
+                    android:textStyle="bold" />
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_1"
+                    android:background="@color/colorLine" />
+
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:orientation="vertical">
+
+                <CheckBox
+                        android:id="@+id/cb_t2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/kematian"
+                        android:textSize="@dimen/font_body_size" />
+
+                <CheckBox
+                        android:id="@+id/cb_t3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/kerugian_harta_benda"
+                        android:textSize="@dimen/font_body_size" />
+
+                <CheckBox
+                        android:id="@+id/cb_t4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/luka_berat"
+                        android:textSize="@dimen/font_body_size" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+            android:id="@+id/btn_proses1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_56"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/space_8"
+            android:background="@drawable/btn_rounded"
+            android:text="next"
+            android:textStyle="bold"
+            android:textColor="@color/milkSoda"/>
+
+</RelativeLayout>
