@@ -192,7 +192,7 @@ class PertanyaanKasusFragment : Fragment() {
 //                                        Log.d("aktordb", listHasil.size.toString())
                                         val intent = Intent(context, HasilIdentifikasiActivity::class.java)
                                         intent.putParcelableArrayListExtra(Extra, ArrayList(listHasil))
-                                        intent.putExtra("Pelaku",pelaku.value)
+                                        intent.putExtra("Pelaku", pelaku.value)
                                         startActivity(intent)
                                     }
                                 }
