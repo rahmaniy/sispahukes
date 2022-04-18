@@ -27,5 +27,4 @@ class IdentifikasiFragment : Fragment() {
             startActivity(intent)
         }
     }
-
 }
