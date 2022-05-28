@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/docs/andro_prjct/SispakHukumKesehatan/app/src/main/res/layout/activity_hasil.xml" value="0.33" />
         <entry key="..\:/docs/andro_prjct/SispakHukumKesehatan/app/src/main/res/layout/activity_hasil_identifikasi.xml" value="0.1" />
         <entry key="..\:/docs/andro_prjct/SispakHukumKesehatan/app/src/main/res/layout/fragment_pertanyaan_kasus.xml" value="0.1" />
+        <entry key="..\:/docs/andro_prjct/SispakHukumKesehatan/app/src/main/res/layout/fragment_pilih_sengketa.xml" value="0.1921875" />
         <entry key="..\:/docs/andro_prjct/SispakHukumKesehatan/app/src/main/res/layout/fragment_pilihan_a1.xml" value="0.1" />
       </map>
     </option>

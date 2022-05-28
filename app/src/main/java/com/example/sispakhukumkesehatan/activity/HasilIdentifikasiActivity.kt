@@ -29,7 +29,7 @@ class HasilIdentifikasiActivity : AppCompatActivity() {
         val listPasal : MutableList<LawModel> = mutableListOf()
 
         tv_hasil_identifikasi.text = "Sanksi yang dijatuhkan kepada " + pelaku.toLowerCase() +
-                " yang diduga\n\n" + hasilKasus
+                " yang diduga " + hasilKasus
 
         adapter.clear()
         for (i in 0 until hasilIdentifikasi.size){

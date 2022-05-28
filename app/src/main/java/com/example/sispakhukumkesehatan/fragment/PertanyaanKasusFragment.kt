@@ -35,6 +35,7 @@ class PertanyaanKasusFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         var klikBtn = 0
+        var klikYesBtn = 0
         val listKasus : MutableList<MainModel> = mutableListOf()
         val listHasil : MutableList<LawModel> = mutableListOf()
 
@@ -67,7 +68,16 @@ class PertanyaanKasusFragment : Fragment() {
 //                        Log.d("aktordb", caseLaw.value.toString())
 //                        listHasil.add(listKasus[klikBtn])
 
-                        hasilKasus = hasilKasus + "- ${listKasus[klikBtn].value}\n"
+                        if (klikYesBtn == 0) {
+                            hasilKasus = listKasus[klikBtn].value
+                        } else if (klikYesBtn == 1) {
+                            hasilKasus = "\n\n- $hasilKasus" +
+                                    "\n- ${listKasus[klikBtn].value}"
+                        } else if (klikYesBtn > 1) {
+                            hasilKasus = hasilKasus + "\n- ${listKasus[klikBtn].value}"
+                        }
+
+                        klikYesBtn+=1
 
                         tv_kasus1.visibility = View.GONE
                         viewline1.visibility = View.GONE
@@ -101,6 +111,12 @@ class PertanyaanKasusFragment : Fragment() {
                                             val damageLawValue = snapshot.child("law").child(damageLawCode.toString()).getValue(LawModel::class.java)
                                             listHasil.add(damageLawValue!!)
 //                                            Log.d("aktordb", listHasil[0].value)
+                                        }
+
+                                        val itemDamage = item as ItemRowButtonAdapter
+
+                                        if (itemDamage.mainModel.name != "notd") {
+                                            hasilKasus = hasilKasus + " mengakibatkan " + itemDamage.mainModel.value.toLowerCase()
                                         }
 
                                         klikBtn += 1
@@ -139,6 +155,10 @@ class PertanyaanKasusFragment : Fragment() {
                                             val statusLawValue = snapshot.child("law").child(statusLawCode.toString()).getValue(LawModel::class.java)
                                             listHasil.add(statusLawValue!!)
                                         }
+
+                                        val itemStatus = item as ItemRowButtonAdapter
+
+                                        hasilKasus = hasilKasus + " (${itemStatus.mainModel.value})"
 
                                         klikBtn += 1
 
@@ -194,6 +214,12 @@ class PertanyaanKasusFragment : Fragment() {
                                         }
 //                                        Log.d("aktordb", listHasil.size.toString())
 
+                                        val itemDamage = item as ItemRowButtonAdapter
+
+                                        if (itemDamage.mainModel.name != "notd") {
+                                            hasilKasus = hasilKasus + " mengakibatkan " + itemDamage.mainModel.value.toLowerCase()
+                                        }
+
                                         val intent = Intent(context, HasilIdentifikasiActivity::class.java)
                                         intent.putParcelableArrayListExtra(Extra, ArrayList(listHasil))
                                         intent.putExtra("Pelaku", pelaku.value)
@@ -227,6 +253,10 @@ class PertanyaanKasusFragment : Fragment() {
                                             listHasil.add(statusLawValue!!)
                                         }
 //                                        Log.d("aktordb", listHasil.size.toString())
+
+                                        val itemStatus = item as ItemRowButtonAdapter
+
+                                        hasilKasus = hasilKasus + " (${itemStatus.mainModel.value})"
 
                                         val intent = Intent(context, HasilIdentifikasiActivity::class.java)
                                         intent.putParcelableArrayListExtra(Extra, ArrayList(listHasil))

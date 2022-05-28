@@ -42,12 +42,12 @@
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:listitem="@layout/item_row2" />
 
-            <ProgressBar
-                    android:id="@+id/progress_bar_hasil"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true" />
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
 
+    <ProgressBar
+            android:id="@+id/progress_bar_hasil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
 </RelativeLayout>
