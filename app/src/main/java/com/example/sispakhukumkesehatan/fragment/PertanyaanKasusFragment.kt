@@ -2,6 +2,7 @@ package com.example.sispakhukumkesehatan.fragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -38,10 +39,10 @@ class PertanyaanKasusFragment : Fragment() {
         val listHasil : MutableList<LawModel> = mutableListOf()
 
         val pelaku = arguments!!.getParcelable<MainModel>(Extra)
-//        tv_aktor_kasus.text = pelaku?.value
         val apakahPelaku = "Apakah " + pelaku?.value + " "
         val tandaTanya = "?"
         var damageAtauStatus = ""
+        var hasilKasus = ""
         recylce_kasus2.visibility = View.GONE
 
         val refDB = FirebaseDatabase.getInstance().getReference()
@@ -65,6 +66,8 @@ class PertanyaanKasusFragment : Fragment() {
                         val caseLaw = case.child(listKasus[klikBtn].name).child("law")
 //                        Log.d("aktordb", caseLaw.value.toString())
 //                        listHasil.add(listKasus[klikBtn])
+
+                        hasilKasus = hasilKasus + "- ${listKasus[klikBtn].value}\n"
 
                         tv_kasus1.visibility = View.GONE
                         viewline1.visibility = View.GONE
@@ -190,9 +193,11 @@ class PertanyaanKasusFragment : Fragment() {
 //                                            Log.d("aktordb", listHasil[0].value)
                                         }
 //                                        Log.d("aktordb", listHasil.size.toString())
+
                                         val intent = Intent(context, HasilIdentifikasiActivity::class.java)
                                         intent.putParcelableArrayListExtra(Extra, ArrayList(listHasil))
                                         intent.putExtra("Pelaku", pelaku.value)
+                                        intent.putExtra("Kasus", hasilKasus)
                                         startActivity(intent)
                                     }
                                 }
@@ -222,9 +227,11 @@ class PertanyaanKasusFragment : Fragment() {
                                             listHasil.add(statusLawValue!!)
                                         }
 //                                        Log.d("aktordb", listHasil.size.toString())
+
                                         val intent = Intent(context, HasilIdentifikasiActivity::class.java)
                                         intent.putParcelableArrayListExtra(Extra, ArrayList(listHasil))
-                                        intent.putExtra("Pelaku",pelaku.value)
+                                        intent.putExtra("Pelaku", pelaku.value)
+                                        intent.putExtra("Kasus", hasilKasus)
                                         startActivity(intent)
                                     }
                                 }
@@ -236,9 +243,11 @@ class PertanyaanKasusFragment : Fragment() {
 //                                    Log.d("aktordb", listHasil.size.toString())
                                 }
 //                                Log.d("aktordb", listHasil.size.toString())
+
                                 val intent = Intent(context, HasilIdentifikasiActivity::class.java)
                                 intent.putParcelableArrayListExtra(Extra, ArrayList(listHasil))
                                 intent.putExtra("Pelaku",pelaku.value)
+                                intent.putExtra("Kasus", hasilKasus)
                                 startActivity(intent)
                             }
                         }
@@ -257,10 +266,10 @@ class PertanyaanKasusFragment : Fragment() {
                             adapter.notifyDataSetChanged()
                             recylce_kasus.adapter = adapter
                         } else {
-
                             val intent = Intent(context, HasilIdentifikasiActivity::class.java)
                             intent.putParcelableArrayListExtra(Extra, ArrayList(listHasil))
                             intent.putExtra("Pelaku",pelaku.value)
+                            intent.putExtra("Kasus", hasilKasus)
                             startActivity(intent)
                         }
                     }

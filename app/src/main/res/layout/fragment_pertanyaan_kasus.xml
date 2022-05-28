@@ -14,19 +14,7 @@
             android:layout_centerInParent="true">
 
         <TextView
-                android:id="@+id/tv_aktor_kasus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_16"
-                android:layout_marginStart="@dimen/space_8"
-                android:layout_marginEnd="@dimen/space_8"
-                android:textAlignment="viewStart"
-                android:textSize="@dimen/font_title_size"
-                android:textStyle="bold" />
-
-        <TextView
                 android:id="@+id/tv_kasus1"
-                android:layout_below="@id/tv_aktor_kasus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_16"
