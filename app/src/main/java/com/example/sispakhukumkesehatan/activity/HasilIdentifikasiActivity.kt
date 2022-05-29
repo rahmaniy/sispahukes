@@ -23,10 +23,10 @@ class HasilIdentifikasiActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hasil_identifikasi)
 
-        val hasilIdentifikasi = intent.getParcelableArrayListExtra<LawModel>(Extra)
+        val hasilIdentifikasi = intent.getParcelableArrayListExtra<MainModel>(Extra)
         val pelaku = intent.getStringExtra("Pelaku")
         val hasilKasus = intent.getStringExtra("Kasus")
-        val listPasal : MutableList<LawModel> = mutableListOf()
+        val listPasal : MutableList<MainModel> = mutableListOf()
 
         tv_hasil_identifikasi.text = "Sanksi yang dijatuhkan kepada " + pelaku.toLowerCase() +
                 " yang diduga " + hasilKasus

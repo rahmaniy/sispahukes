@@ -37,13 +37,17 @@ class PertanyaanKasusFragment : Fragment() {
         var klikBtn = 0
         var klikYesBtn = 0
         val listKasus : MutableList<MainModel> = mutableListOf()
-        val listHasil : MutableList<LawModel> = mutableListOf()
+        val listPasal : MutableList<MainModel> = mutableListOf()
+        val listHukuman : MutableList<MainModel> = mutableListOf()
+        val listPasalHukuman : MutableList<LawModel> = mutableListOf()
 
+        val itemPasalHukuman = LawModel()
         val pelaku = arguments!!.getParcelable<MainModel>(Extra)
         val apakahPelaku = "Apakah " + pelaku?.value + " "
         val tandaTanya = "?"
         var damageAtauStatus = ""
         var hasilKasus = ""
+
         recylce_kasus2.visibility = View.GONE
 
         val refDB = FirebaseDatabase.getInstance().getReference()
@@ -57,16 +61,12 @@ class PertanyaanKasusFragment : Fragment() {
 
                     listKasus.add(caseValue!!)
 
-//                    Log.d("aktordb", listKasus.size.toString())
-
                     tv_kasus1.text = apakahPelaku + listKasus[klikBtn].value + tandaTanya + damageAtauStatus
 
                     btn_yes.setOnClickListener {
                         val caseDamage = case.child(listKasus[klikBtn].name).child("damage")
                         val caseStatus = case.child(listKasus[klikBtn].name).child("status")
                         val caseLaw = case.child(listKasus[klikBtn].name).child("law")
-//                        Log.d("aktordb", caseLaw.value.toString())
-//                        listHasil.add(listKasus[klikBtn])
 
                         if (klikYesBtn == 0) {
                             hasilKasus = listKasus[klikBtn].value
@@ -108,9 +108,22 @@ class PertanyaanKasusFragment : Fragment() {
 
                                         damageLaw.children.forEach {
                                             val damageLawCode = it.key
-                                            val damageLawValue = snapshot.child("law").child(damageLawCode.toString()).getValue(LawModel::class.java)
-                                            listHasil.add(damageLawValue!!)
-//                                            Log.d("aktordb", listHasil[0].value)
+                                            val damagePenaltyCode = it.child("penalty").value
+                                            val damageLawValue = snapshot.child("law").child(damageLawCode.toString()).getValue(MainModel::class.java)
+                                            val damagePenaltyValue = snapshot.child("penalty").child(damagePenaltyCode.toString()).getValue(MainModel::class.java)
+
+                                            listPasal.add(damageLawValue!!)
+                                            listHukuman.add(damagePenaltyValue!!)
+
+                                            itemPasalHukuman.apply {
+                                                nameLaw = listPasal[klikYesBtn-1].name
+                                                valueLaw = listPasal[klikYesBtn-1].value
+                                                namePenalty = listHukuman[klikYesBtn-1].name
+                                                valuePenalty = listHukuman[klikYesBtn-1].value
+                                            }
+
+                                            listPasalHukuman.add(itemPasalHukuman)
+//                                            Log.d("aktordb", listPasalHukuman[klikYesBtn-1].namePenalty)
                                         }
 
                                         val itemDamage = item as ItemRowButtonAdapter
@@ -152,8 +165,22 @@ class PertanyaanKasusFragment : Fragment() {
 
                                         statusLaw.children.forEach {
                                             val statusLawCode = it.key
-                                            val statusLawValue = snapshot.child("law").child(statusLawCode.toString()).getValue(LawModel::class.java)
-                                            listHasil.add(statusLawValue!!)
+                                            val statusPenaltyCode = it.child("penalty").value
+                                            val statusLawValue = snapshot.child("law").child(statusLawCode.toString()).getValue(MainModel::class.java)
+                                            val statusPenaltyValue = snapshot.child("penalty").child(statusPenaltyCode.toString()).getValue(MainModel::class.java)
+
+                                            listPasal.add(statusLawValue!!)
+                                            listHukuman.add(statusPenaltyValue!!)
+
+                                            itemPasalHukuman.apply {
+                                                nameLaw = listPasal[klikYesBtn-1].name
+                                                valueLaw = listPasal[klikYesBtn-1].value
+                                                namePenalty = listHukuman[klikYesBtn-1].name
+                                                valuePenalty = listHukuman[klikYesBtn-1].value
+                                            }
+
+                                            listPasalHukuman.add(itemPasalHukuman)
+//                                            Log.d("aktordb", listPasalHukuman[klikYesBtn-1].nameLaw)
                                         }
 
                                         val itemStatus = item as ItemRowButtonAdapter
@@ -171,9 +198,22 @@ class PertanyaanKasusFragment : Fragment() {
                             } else {
                                 caseLaw.children.forEach {
                                     val lawCode = it.key
-                                    val lawValue = snapshot.child("law").child(lawCode.toString()).getValue(LawModel::class.java)
-                                    listHasil.add(lawValue!!)
-//                                    Log.d("aktordb", listHasil.size.toString())
+                                    val penaltyCode = it.child("penalty").value
+                                    val lawValue = snapshot.child("law").child(lawCode.toString()).getValue(MainModel::class.java)
+                                    val penaltyValue = snapshot.child("penalty").child(penaltyCode.toString()).getValue(MainModel::class.java)
+
+                                    listPasal.add(lawValue!!)
+                                    listHukuman.add(penaltyValue!!)
+
+                                    itemPasalHukuman.apply {
+                                        nameLaw = listPasal[klikYesBtn-1].name
+                                        valueLaw = listPasal[klikYesBtn-1].value
+                                        namePenalty = listHukuman[klikYesBtn-1].name
+                                        valuePenalty = listHukuman[klikYesBtn-1].value
+                                    }
+
+                                    listPasalHukuman.add(itemPasalHukuman)
+//                                    Log.d("aktordb", listPasalHukuman[klikYesBtn-1].namePenalty)
                                 }
 
                                 klikBtn += 1
@@ -182,8 +222,6 @@ class PertanyaanKasusFragment : Fragment() {
                                 adapter.add(MainAdapter(listKasus[klikBtn], apakahPelaku, tandaTanya,""))
                                 adapter.notifyDataSetChanged()
                                 recylce_kasus.adapter = adapter
-
-//                                Log.d("aktordb", klikBtn.toString())
                             }
                         } else {
                             if (caseDamage.hasChildren()) {
@@ -208,9 +246,22 @@ class PertanyaanKasusFragment : Fragment() {
                                     adapter2.setOnItemClickListener {item, view ->
                                         damageLaw.children.forEach {
                                             val damageLawCode = it.key
-                                            val damageLawValue = snapshot.child("law").child(damageLawCode.toString()).getValue(LawModel::class.java)
-                                            listHasil.add(damageLawValue!!)
-//                                            Log.d("aktordb", listHasil[0].value)
+                                            val damagePenaltyCode = it.child("penalty").value
+                                            val damageLawValue = snapshot.child("law").child(damageLawCode.toString()).getValue(MainModel::class.java)
+                                            val damagePenaltyValue = snapshot.child("penalty").child(damagePenaltyCode.toString()).getValue(MainModel::class.java)
+
+                                            listPasal.add(damageLawValue!!)
+                                            listHukuman.add(damagePenaltyValue!!)
+
+                                            itemPasalHukuman.apply {
+                                                nameLaw = listPasal[klikYesBtn-1].name
+                                                valueLaw = listPasal[klikYesBtn-1].value
+                                                namePenalty = listHukuman[klikYesBtn-1].name
+                                                valuePenalty = listHukuman[klikYesBtn-1].value
+                                            }
+
+                                            listPasalHukuman.add(itemPasalHukuman)
+//                                            Log.d("aktordb", listPasalHukuman[klikYesBtn-1].namePenalty)
                                         }
 //                                        Log.d("aktordb", listHasil.size.toString())
 
@@ -221,7 +272,7 @@ class PertanyaanKasusFragment : Fragment() {
                                         }
 
                                         val intent = Intent(context, HasilIdentifikasiActivity::class.java)
-                                        intent.putParcelableArrayListExtra(Extra, ArrayList(listHasil))
+                                        intent.putParcelableArrayListExtra(Extra, ArrayList(listPasal))
                                         intent.putExtra("Pelaku", pelaku.value)
                                         intent.putExtra("Kasus", hasilKasus)
                                         startActivity(intent)
@@ -249,8 +300,22 @@ class PertanyaanKasusFragment : Fragment() {
                                     adapter2.setOnItemClickListener {item, view ->
                                         statusLaw.children.forEach {
                                             val statusLawCode = it.key
-                                            val statusLawValue = snapshot.child("law").child(statusLawCode.toString()).getValue(LawModel::class.java)
-                                            listHasil.add(statusLawValue!!)
+                                            val statusPenaltyCode = it.child("penalty").value
+                                            val statusLawValue = snapshot.child("law").child(statusLawCode.toString()).getValue(MainModel::class.java)
+                                            val statusPenaltyValue = snapshot.child("penalty").child(statusPenaltyCode.toString()).getValue(MainModel::class.java)
+
+                                            listPasal.add(statusLawValue!!)
+                                            listHukuman.add(statusPenaltyValue!!)
+
+                                            itemPasalHukuman.apply {
+                                                nameLaw = listPasal[klikYesBtn-1].name
+                                                valueLaw = listPasal[klikYesBtn-1].value
+                                                namePenalty = listHukuman[klikYesBtn-1].name
+                                                valuePenalty = listHukuman[klikYesBtn-1].value
+                                            }
+
+                                            listPasalHukuman.add(itemPasalHukuman)
+//                                            Log.d("aktordb", listPasalHukuman[klikYesBtn-1].namePenalty)
                                         }
 //                                        Log.d("aktordb", listHasil.size.toString())
 
@@ -259,7 +324,7 @@ class PertanyaanKasusFragment : Fragment() {
                                         hasilKasus = hasilKasus + " (${itemStatus.mainModel.value})"
 
                                         val intent = Intent(context, HasilIdentifikasiActivity::class.java)
-                                        intent.putParcelableArrayListExtra(Extra, ArrayList(listHasil))
+                                        intent.putParcelableArrayListExtra(Extra, ArrayList(listPasal))
                                         intent.putExtra("Pelaku", pelaku.value)
                                         intent.putExtra("Kasus", hasilKasus)
                                         startActivity(intent)
@@ -268,23 +333,36 @@ class PertanyaanKasusFragment : Fragment() {
                             } else {
                                 caseLaw.children.forEach {
                                     val lawCode = it.key
-                                    val lawValue = snapshot.child("law").child(lawCode.toString()).getValue(LawModel::class.java)
-                                    listHasil.add(lawValue!!)
+                                    val penaltyCode = it.child("penalty").value
+                                    val lawValue = snapshot.child("law").child(lawCode.toString()).getValue(MainModel::class.java)
+                                    val penaltyValue = snapshot.child("penalty").child(penaltyCode.toString()).getValue(MainModel::class.java)
+
+                                    listPasal.add(lawValue!!)
+                                    listHukuman.add(penaltyValue!!)
+
+                                    itemPasalHukuman.apply {
+                                        nameLaw = listPasal[klikYesBtn-1].name
+                                        valueLaw = listPasal[klikYesBtn-1].value
+                                        namePenalty = listHukuman[klikYesBtn-1].name
+                                        valuePenalty = listHukuman[klikYesBtn-1].value
+                                    }
+
+                                    listPasalHukuman.add(itemPasalHukuman)
+//                                    Log.d("aktordb", listPasalHukuman[klikYesBtn-1].namePenalty)
 //                                    Log.d("aktordb", listHasil.size.toString())
                                 }
 //                                Log.d("aktordb", listHasil.size.toString())
 
                                 val intent = Intent(context, HasilIdentifikasiActivity::class.java)
-                                intent.putParcelableArrayListExtra(Extra, ArrayList(listHasil))
+                                intent.putParcelableArrayListExtra(Extra, ArrayList(listPasal))
                                 intent.putExtra("Pelaku",pelaku.value)
                                 intent.putExtra("Kasus", hasilKasus)
                                 startActivity(intent)
                             }
                         }
                     }
-                    btn_no.setOnClickListener {
-//                        listHasil.add(listKasus[klikBtn])
 
+                    btn_no.setOnClickListener {
                         tv_kasus1.visibility = View.GONE
                         viewline1.visibility = View.GONE
 
@@ -297,7 +375,7 @@ class PertanyaanKasusFragment : Fragment() {
                             recylce_kasus.adapter = adapter
                         } else {
                             val intent = Intent(context, HasilIdentifikasiActivity::class.java)
-                            intent.putParcelableArrayListExtra(Extra, ArrayList(listHasil))
+                            intent.putParcelableArrayListExtra(Extra, ArrayList(listPasal))
                             intent.putExtra("Pelaku",pelaku.value)
                             intent.putExtra("Kasus", hasilKasus)
                             startActivity(intent)

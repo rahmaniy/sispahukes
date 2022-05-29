@@ -4,6 +4,11 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-class LawModel(val deskripsi: String, val name: String, val value: String): Parcelable {
-    constructor():this("","","")
+class LawModel(
+    var nameLaw: String,
+    var valueLaw: String,
+    var namePenalty: String,
+    var valuePenalty: String
+    ): Parcelable {
+    constructor():this("","", "","")
 }

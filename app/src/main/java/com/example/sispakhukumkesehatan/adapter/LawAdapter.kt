@@ -7,9 +7,9 @@ import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.item_row2.view.*
 
-class LawAdapter(val lawModel: LawModel) : Item<ViewHolder>() {
+class LawAdapter(val mainModel: MainModel) : Item<ViewHolder>() {
     override fun bind(viewHolder: ViewHolder, position: Int) {
-        viewHolder.itemView.tv_item_row2.text = lawModel.value +"\n\n"+ lawModel.deskripsi
+        viewHolder.itemView.tv_item_row2.text = mainModel.value
     }
 
     override fun getLayout(): Int {
