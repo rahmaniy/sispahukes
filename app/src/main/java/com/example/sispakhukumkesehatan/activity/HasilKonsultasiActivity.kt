@@ -1,26 +1,16 @@
 package com.example.sispakhukumkesehatan.activity
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.ActionBar
-import androidx.fragment.app.FragmentManager
 import com.example.sispakhukumkesehatan.Extra
 import com.example.sispakhukumkesehatan.R
-import com.example.sispakhukumkesehatan.adapter.*
-import com.example.sispakhukumkesehatan.fragment.DugaanKasusFragment
 import com.example.sispakhukumkesehatan.model.KasusModel
-import com.example.sispakhukumkesehatan.model.LawModel
-import com.example.sispakhukumkesehatan.model.SengketaModel
 import com.google.firebase.database.*
-import com.xwray.groupie.ExpandableGroup
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_hasil.*
-import kotlinx.android.synthetic.main.fragment_pertanyaan_kasus.*
-import kotlinx.android.synthetic.main.fragment_pilih_sengketa.*
 
 class HasilKonsultasiActivity : AppCompatActivity() {
     private val adapter = GroupAdapter<ViewHolder>()

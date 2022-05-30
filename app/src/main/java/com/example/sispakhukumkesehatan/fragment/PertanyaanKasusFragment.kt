@@ -2,7 +2,6 @@ package com.example.sispakhukumkesehatan.fragment
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +11,6 @@ import com.example.sispakhukumkesehatan.R
 import com.example.sispakhukumkesehatan.activity.HasilIdentifikasiActivity
 import com.example.sispakhukumkesehatan.adapter.ItemRowButtonAdapter
 import com.example.sispakhukumkesehatan.adapter.MainAdapter
-import com.example.sispakhukumkesehatan.model.LawModel
 import com.example.sispakhukumkesehatan.model.MainModel
 import com.google.firebase.database.*
 import com.xwray.groupie.GroupAdapter
@@ -39,9 +37,7 @@ class PertanyaanKasusFragment : Fragment() {
         val listKasus : MutableList<MainModel> = mutableListOf()
         val listPasal : MutableList<MainModel> = mutableListOf()
         val listHukuman : MutableList<MainModel> = mutableListOf()
-        val listPasalHukuman : MutableList<LawModel> = mutableListOf()
 
-        val itemPasalHukuman = LawModel()
         val pelaku = arguments!!.getParcelable<MainModel>(Extra)
         val apakahPelaku = "Apakah " + pelaku?.value + " "
         val tandaTanya = "?"
@@ -114,16 +110,6 @@ class PertanyaanKasusFragment : Fragment() {
 
                                             listPasal.add(damageLawValue!!)
                                             listHukuman.add(damagePenaltyValue!!)
-
-                                            itemPasalHukuman.apply {
-                                                nameLaw = listPasal[klikYesBtn-1].name
-                                                valueLaw = listPasal[klikYesBtn-1].value
-                                                namePenalty = listHukuman[klikYesBtn-1].name
-                                                valuePenalty = listHukuman[klikYesBtn-1].value
-                                            }
-
-                                            listPasalHukuman.add(itemPasalHukuman)
-//                                            Log.d("aktordb", listPasalHukuman[klikYesBtn-1].namePenalty)
                                         }
 
                                         val itemDamage = item as ItemRowButtonAdapter
@@ -171,16 +157,6 @@ class PertanyaanKasusFragment : Fragment() {
 
                                             listPasal.add(statusLawValue!!)
                                             listHukuman.add(statusPenaltyValue!!)
-
-                                            itemPasalHukuman.apply {
-                                                nameLaw = listPasal[klikYesBtn-1].name
-                                                valueLaw = listPasal[klikYesBtn-1].value
-                                                namePenalty = listHukuman[klikYesBtn-1].name
-                                                valuePenalty = listHukuman[klikYesBtn-1].value
-                                            }
-
-                                            listPasalHukuman.add(itemPasalHukuman)
-//                                            Log.d("aktordb", listPasalHukuman[klikYesBtn-1].nameLaw)
                                         }
 
                                         val itemStatus = item as ItemRowButtonAdapter
@@ -204,16 +180,6 @@ class PertanyaanKasusFragment : Fragment() {
 
                                     listPasal.add(lawValue!!)
                                     listHukuman.add(penaltyValue!!)
-
-                                    itemPasalHukuman.apply {
-                                        nameLaw = listPasal[klikYesBtn-1].name
-                                        valueLaw = listPasal[klikYesBtn-1].value
-                                        namePenalty = listHukuman[klikYesBtn-1].name
-                                        valuePenalty = listHukuman[klikYesBtn-1].value
-                                    }
-
-                                    listPasalHukuman.add(itemPasalHukuman)
-//                                    Log.d("aktordb", listPasalHukuman[klikYesBtn-1].namePenalty)
                                 }
 
                                 klikBtn += 1
@@ -252,18 +218,7 @@ class PertanyaanKasusFragment : Fragment() {
 
                                             listPasal.add(damageLawValue!!)
                                             listHukuman.add(damagePenaltyValue!!)
-
-                                            itemPasalHukuman.apply {
-                                                nameLaw = listPasal[klikYesBtn-1].name
-                                                valueLaw = listPasal[klikYesBtn-1].value
-                                                namePenalty = listHukuman[klikYesBtn-1].name
-                                                valuePenalty = listHukuman[klikYesBtn-1].value
-                                            }
-
-                                            listPasalHukuman.add(itemPasalHukuman)
-//                                            Log.d("aktordb", listPasalHukuman[klikYesBtn-1].namePenalty)
                                         }
-//                                        Log.d("aktordb", listHasil.size.toString())
 
                                         val itemDamage = item as ItemRowButtonAdapter
 
@@ -273,8 +228,9 @@ class PertanyaanKasusFragment : Fragment() {
 
                                         val intent = Intent(context, HasilIdentifikasiActivity::class.java)
                                         intent.putParcelableArrayListExtra(Extra, ArrayList(listPasal))
-                                        intent.putExtra("Pelaku", pelaku.value)
-                                        intent.putExtra("Kasus", hasilKasus)
+                                        intent.putParcelableArrayListExtra(LIST_HUKUMAN, ArrayList(listHukuman))
+                                        intent.putExtra(PELAKU, pelaku.value)
+                                        intent.putExtra(KASUS, hasilKasus)
                                         startActivity(intent)
                                     }
                                 }
@@ -306,18 +262,7 @@ class PertanyaanKasusFragment : Fragment() {
 
                                             listPasal.add(statusLawValue!!)
                                             listHukuman.add(statusPenaltyValue!!)
-
-                                            itemPasalHukuman.apply {
-                                                nameLaw = listPasal[klikYesBtn-1].name
-                                                valueLaw = listPasal[klikYesBtn-1].value
-                                                namePenalty = listHukuman[klikYesBtn-1].name
-                                                valuePenalty = listHukuman[klikYesBtn-1].value
-                                            }
-
-                                            listPasalHukuman.add(itemPasalHukuman)
-//                                            Log.d("aktordb", listPasalHukuman[klikYesBtn-1].namePenalty)
                                         }
-//                                        Log.d("aktordb", listHasil.size.toString())
 
                                         val itemStatus = item as ItemRowButtonAdapter
 
@@ -325,8 +270,9 @@ class PertanyaanKasusFragment : Fragment() {
 
                                         val intent = Intent(context, HasilIdentifikasiActivity::class.java)
                                         intent.putParcelableArrayListExtra(Extra, ArrayList(listPasal))
-                                        intent.putExtra("Pelaku", pelaku.value)
-                                        intent.putExtra("Kasus", hasilKasus)
+                                        intent.putParcelableArrayListExtra(LIST_HUKUMAN, ArrayList(listHukuman))
+                                        intent.putExtra(PELAKU, pelaku.value)
+                                        intent.putExtra(KASUS, hasilKasus)
                                         startActivity(intent)
                                     }
                                 }
@@ -340,23 +286,14 @@ class PertanyaanKasusFragment : Fragment() {
                                     listPasal.add(lawValue!!)
                                     listHukuman.add(penaltyValue!!)
 
-                                    itemPasalHukuman.apply {
-                                        nameLaw = listPasal[klikYesBtn-1].name
-                                        valueLaw = listPasal[klikYesBtn-1].value
-                                        namePenalty = listHukuman[klikYesBtn-1].name
-                                        valuePenalty = listHukuman[klikYesBtn-1].value
-                                    }
-
-                                    listPasalHukuman.add(itemPasalHukuman)
-//                                    Log.d("aktordb", listPasalHukuman[klikYesBtn-1].namePenalty)
 //                                    Log.d("aktordb", listHasil.size.toString())
                                 }
-//                                Log.d("aktordb", listHasil.size.toString())
 
                                 val intent = Intent(context, HasilIdentifikasiActivity::class.java)
                                 intent.putParcelableArrayListExtra(Extra, ArrayList(listPasal))
-                                intent.putExtra("Pelaku",pelaku.value)
-                                intent.putExtra("Kasus", hasilKasus)
+                                intent.putParcelableArrayListExtra(LIST_HUKUMAN, ArrayList(listHukuman))
+                                intent.putExtra(PELAKU, pelaku.value)
+                                intent.putExtra(KASUS, hasilKasus)
                                 startActivity(intent)
                             }
                         }
@@ -376,8 +313,9 @@ class PertanyaanKasusFragment : Fragment() {
                         } else {
                             val intent = Intent(context, HasilIdentifikasiActivity::class.java)
                             intent.putParcelableArrayListExtra(Extra, ArrayList(listPasal))
-                            intent.putExtra("Pelaku",pelaku.value)
-                            intent.putExtra("Kasus", hasilKasus)
+                            intent.putParcelableArrayListExtra(LIST_HUKUMAN, ArrayList(listHukuman))
+                            intent.putExtra(PELAKU, pelaku.value)
+                            intent.putExtra(KASUS, hasilKasus)
                             startActivity(intent)
                         }
                     }
@@ -387,8 +325,12 @@ class PertanyaanKasusFragment : Fragment() {
 
             override fun onCancelled(error: DatabaseError) {
             }
-
         })
+    }
 
+    companion object {
+        val PELAKU = "PELAKU"
+        val KASUS = "KASUS"
+        val LIST_HUKUMAN = "LIST_HUKUMAN"
     }
 }

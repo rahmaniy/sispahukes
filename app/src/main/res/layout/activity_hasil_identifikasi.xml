@@ -37,10 +37,10 @@
                     android:id="@+id/recylce_hasil_identifikasi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_16"
                     android:layout_below="@id/tv_hasil_identifikasi"
-                    android:padding="@dimen/space_8"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/item_row2" />
+                    tools:listitem="@layout/item_row_parent_hasil_identifikasi" />
 
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
