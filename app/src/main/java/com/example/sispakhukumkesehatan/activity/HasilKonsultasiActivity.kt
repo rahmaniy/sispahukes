@@ -1,5 +1,6 @@
 package com.example.sispakhukumkesehatan.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -39,6 +40,9 @@ class HasilKonsultasiActivity : AppCompatActivity() {
         })
         progress_bar_hasil.visibility = View.INVISIBLE
         setActionBarTitle("Hasil Konsultasi")
+        btn_back.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
     }
 
     fun tampilHasil(kodeHasilDugaan: String, pasalKasusMPD1: String, sanksiDenda: String, dugaan: String, pelaku: String, sanksiPenjaraAtauKurungan: String) {

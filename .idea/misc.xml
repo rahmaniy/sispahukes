@@ -5,15 +5,18 @@
       <map>
         <entry key="..\:/docs/andro_prjct/SispakHukumKesehatan/app/src/main/res/layout/activity_hasil.xml" value="0.33" />
         <entry key="..\:/docs/andro_prjct/SispakHukumKesehatan/app/src/main/res/layout/activity_hasil_identifikasi.xml" value="0.22" />
+        <entry key="..\:/docs/andro_prjct/SispakHukumKesehatan/app/src/main/res/layout/fragment_pertanyaan_a1.xml" value="0.1" />
         <entry key="..\:/docs/andro_prjct/SispakHukumKesehatan/app/src/main/res/layout/fragment_pertanyaan_kasus.xml" value="0.1" />
         <entry key="..\:/docs/andro_prjct/SispakHukumKesehatan/app/src/main/res/layout/fragment_pilih_sengketa.xml" value="0.1921875" />
         <entry key="..\:/docs/andro_prjct/SispakHukumKesehatan/app/src/main/res/layout/fragment_pilihan_a1.xml" value="0.1" />
+        <entry key="..\:/docs/andro_prjct/SispakHukumKesehatan/app/src/main/res/layout/fragment_pilihan_aktor.xml" value="0.1" />
         <entry key="..\:/docs/andro_prjct/SispakHukumKesehatan/app/src/main/res/layout/item_row.xml" value="0.1" />
         <entry key="..\:/docs/andro_prjct/SispakHukumKesehatan/app/src/main/res/layout/item_row2.xml" value="0.22" />
         <entry key="..\:/docs/andro_prjct/SispakHukumKesehatan/app/src/main/res/layout/item_row2_child.xml" value="0.1921875" />
         <entry key="..\:/docs/andro_prjct/SispakHukumKesehatan/app/src/main/res/layout/item_row_child.xml" value="0.1921875" />
         <entry key="..\:/docs/andro_prjct/SispakHukumKesehatan/app/src/main/res/layout/item_row_parent.xml" value="0.25" />
         <entry key="..\:/docs/andro_prjct/SispakHukumKesehatan/app/src/main/res/layout/item_row_pertanyaan.xml" value="0.1921875" />
+        <entry key="..\:/docs/andro_prjct/SispakHukumKesehatan/app/src/main/res/menu/menu_main.xml" value="0.1" />
       </map>
     </option>
   </component>

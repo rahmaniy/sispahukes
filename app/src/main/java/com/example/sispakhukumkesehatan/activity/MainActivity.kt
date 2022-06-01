@@ -45,10 +45,10 @@ class MainActivity : AppCompatActivity() {
                 startActivity(moveTentangAplikasi)
             }
 
-            R.id.action_bantuan -> {
-                val moveBantuan = Intent(this, Bantuan::class.java)
-                startActivity(moveBantuan)
-            }
+//            R.id.action_bantuan -> {
+//                val moveBantuan = Intent(this, Bantuan::class.java)
+//                startActivity(moveBantuan)
+//            }
         }
     }
 

@@ -8,10 +8,10 @@
             android:title="@string/tentang_aplikasi"
             android:icon="@drawable/ic_info_outline_black_24dp"
             app:showAsAction="always"/>
-
+<!--
     <item
             android:id="@+id/action_bantuan"
             android:title="@string/bantuan"
             android:icon="@drawable/ic_help_outline_black_24dp"
-            app:showAsAction="always"/>
+            app:showAsAction="always"/> -->
 </menu>
