@@ -11,10 +11,8 @@
             android:layout_weight="1"/>
 
     <ImageView
-            android:src="@drawable/ic_undraw_medicine_b1ol"
+            android:src="@drawable/ic_hk_kesehatan"
             android:id="@+id/identifikasi_image"
-            android:layout_marginHorizontal="@dimen/space_32"
-            android:layout_marginVertical="@dimen/space_32"
             android:layout_weight="3"
             android:layout_width="match_parent"
             android:layout_height="0dp"/>

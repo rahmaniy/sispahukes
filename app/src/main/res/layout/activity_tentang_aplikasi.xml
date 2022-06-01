@@ -8,4 +8,57 @@
         android:background="@color/creamCheeseFrosting"
         tools:context=".activity.TentangAplikasi">
 
+    <ImageView
+            android:id="@+id/iv_hk_kesehatan"
+            android:src="@drawable/ic_hk_kesehatan"
+            android:layout_marginTop="@dimen/space_64"
+            android:layout_width="700px"
+            android:layout_height="700px"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+            android:id="@+id/tv_vers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/md_black_1000"
+            android:text="Versi 1.0"
+            app:layout_constraintTop_toBottomOf="@id/iv_hk_kesehatan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+            android:id="@+id/tv_tentang_aplikasi"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_32"
+            android:textAlignment="center"
+            android:text="@string/deskripsi_sispakhukes"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_vers"/>
+
+    <TextView
+            android:id="@+id/tv_title_dev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_32"
+            android:layout_marginStart="@dimen/space_8"
+            android:textColor="@color/md_black_1000"
+            android:text="Tentang Pengembang"
+            android:textSize="@dimen/font_title_size"
+            app:layout_constraintTop_toBottomOf="@id/tv_tentang_aplikasi"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+            android:id="@+id/tv_dev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_8"
+            android:layout_marginHorizontal="@dimen/space_16"
+            android:textAlignment="viewStart"
+            android:text="text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_dev"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

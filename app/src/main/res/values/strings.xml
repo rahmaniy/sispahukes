@@ -47,5 +47,6 @@
     <string name="title_activity_konsultasi">KonsultasiActivity</string>
     <string name="hello_world">Hello Square World!</string>
     <string name="title_activity_hasil_identifikasi">HasilIdentifikasiActivity</string>
+    <string name="deskripsi_sispakhukes">Sistem Pakar Hukum Kesehatan memudahkan pengguna untuk mengetahui pasal-pasal yang berkaitan dengan hukum kesehatan serta mengidentifikasi kasus sengketa kesehatan.</string>
     <!-- TODO: Remove or change this placeholder text -->
 </resources>
