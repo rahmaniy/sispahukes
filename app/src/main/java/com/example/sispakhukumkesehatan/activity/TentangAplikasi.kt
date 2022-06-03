@@ -12,7 +12,7 @@ class TentangAplikasi : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tentang_aplikasi)
 
-        tv_dev.text = "Mahasiswa         \t\t\t\t\t\t\t: Noverina Rahmaniyanti" +
+        tv_dev.text = "Mahasiswa        \t\t\t\t\t\t\t: Noverina Rahmaniyanti" +
                 "\nEmail                      \t\t\t\t\t: nrahmaniyanti@gmail.com" +
                 "\nDosen Pembimbing I  \t: Dr. Eng. Admi Syarif" +
                 "\nDosen Pembimbing II \t: Yulia Kusuma Wardani, S.H., L.L.M." +

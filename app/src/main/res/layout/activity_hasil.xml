@@ -8,58 +8,71 @@
         android:background="@color/creamCheeseFrosting"
         tools:context=".activity.HasilKonsultasiActivity">
 
-    <TextView
-            android:id="@+id/tv_hasil_kasus"
-            android:textSize="@dimen/font_title_size"
-            android:layout_marginTop="@dimen/space_16"
-            android:layout_marginStart="@dimen/space_8"
-            android:layout_marginEnd="@dimen/space_8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:textAlignment="viewStart"
-            android:text="@string/hello_blank_fragment" />
+    <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/btn_back">
 
-    <TextView
-            android:id="@+id/tv_sanksi"
-            android:textStyle="bold"
-            android:layout_below="@id/tv_hasil_kasus"
-            android:textSize="@dimen/font_title_size"
-            android:layout_marginTop="@dimen/space_16"
-            android:layout_marginStart="@dimen/space_8"
-            android:layout_marginEnd="@dimen/space_8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:textAlignment="viewStart"
-            android:text="@string/hello_blank_fragment" />
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <TextView
-            android:id="@+id/tv_hasil_kasus_penjelasan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_sanksi"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="@dimen/space_8"
-            android:layout_marginTop="@dimen/space_16"
-            android:layout_marginEnd="@dimen/space_8"
-            android:text="@string/hello_blank_fragment"
-            android:textAlignment="viewStart"
-            android:textSize="@dimen/font_title_size" />
+            <TextView
+                    android:id="@+id/tv_hasil_kasus"
+                    android:textSize="@dimen/font_title_size"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:layout_marginStart="@dimen/space_8"
+                    android:layout_marginEnd="@dimen/space_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:textAlignment="viewStart"
+                    android:text="@string/hello_blank_fragment" />
 
-    <TextView
-            android:id="@+id/tv_hasil_kasus_catatan"
-            android:textStyle="bold"
-            android:layout_below="@id/tv_hasil_kasus_penjelasan"
-            android:textSize="@dimen/font_title_size"
-            android:layout_marginTop="@dimen/space_16"
-            android:layout_marginStart="@dimen/space_8"
-            android:layout_marginEnd="@dimen/space_8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:textAlignment="viewStart"
-            android:text="@string/hello_blank_fragment" />
+            <TextView
+                    android:id="@+id/tv_sanksi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_hasil_kasus"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="@dimen/space_8"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:layout_marginEnd="@dimen/space_8"
+                    android:text="@string/hello_blank_fragment"
+                    android:textAlignment="viewStart"
+                    android:textSize="@dimen/font_title_size"
+                    android:textStyle="bold" />
+
+            <TextView
+                    android:id="@+id/tv_hasil_kasus_penjelasan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_sanksi"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="@dimen/space_8"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:layout_marginEnd="@dimen/space_8"
+                    android:text="@string/hello_blank_fragment"
+                    android:textAlignment="viewStart"
+                    android:textSize="@dimen/font_title_size" />
+
+            <TextView
+                    android:id="@+id/tv_hasil_kasus_catatan"
+                    android:textStyle="bold"
+                    android:layout_below="@id/tv_hasil_kasus_penjelasan"
+                    android:textSize="@dimen/font_title_size"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:layout_marginStart="@dimen/space_8"
+                    android:layout_marginEnd="@dimen/space_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:textAlignment="viewStart"
+                    android:text="@string/hello_blank_fragment" />
+        </RelativeLayout>
+
+    </ScrollView>
 
     <Button
             android:id="@+id/btn_back"
@@ -69,13 +82,12 @@
             android:background="@drawable/btn_rounded"
             android:text="kembali ke beranda"
             android:textStyle="bold"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/milkSoda"/>
+            android:textColor="@color/milkSoda"
+            android:layout_alignParentBottom="true"/>
 
     <ProgressBar
             android:id="@+id/progress_bar_hasil"
-            android:layout_centerInParent="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
 </RelativeLayout>
