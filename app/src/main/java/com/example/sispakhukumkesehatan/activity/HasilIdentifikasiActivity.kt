@@ -39,8 +39,15 @@ class HasilIdentifikasiActivity : AppCompatActivity() {
         val pidanaTambahan = "\na. pencabutan izin usaha; dan/atau" +
                 "\nb. pencabutan status badan hukum."
 
+        val penjelasan = "Penjelasan:\n" +
+                "Berat atau ringannya sanksi di atas dijatuhkan, berdasar pada hasil pemeriksaan  " +
+                "Majelis Hakim, yang kemudian ditetapkan dalam surat Putusan Pengadilan atau " +
+                "Makmaham Agung."
+
         tv_hasil_identifikasi.text = "Sanksi yang dijatuhkan kepada " + pelaku.toLowerCase() +
                 " yang diduga " + hasilKasus
+
+        tv_penjelasan_hasil_identifikasi.text = penjelasan
 
         for (i in 0 until pasalHasilIdentifikasi.size) {
             var x = 0

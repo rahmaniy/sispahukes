@@ -42,6 +42,18 @@
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:listitem="@layout/item_row_parent_hasil_identifikasi" />
 
+            <TextView
+                    android:id="@+id/tv_penjelasan_hasil_identifikasi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/recylce_hasil_identifikasi"
+                    android:layout_marginStart="@dimen/space_8"
+                    android:layout_marginVertical="@dimen/space_16"
+                    android:layout_marginEnd="@dimen/space_8"
+                    android:text="@string/hello_blank_fragment"
+                    android:textAlignment="viewStart"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/font_title_size" />
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
 
