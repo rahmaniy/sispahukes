@@ -14,7 +14,7 @@ class TentangAplikasi : AppCompatActivity() {
 
         tv_dev.text = "Mahasiswa        \t\t\t\t\t\t\t: Noverina Rahmaniyanti" +
                 "\nEmail                      \t\t\t\t\t: nrahmaniyanti@gmail.com" +
-                "\nDosen Pembimbing I  \t: Dr. Eng. Admi Syarif" +
+                "\nDosen Pembimbing I  \t: Prof. Admi Syarif, Ph.D." +
                 "\nDosen Pembimbing II \t: Yulia Kusuma Wardani, S.H., L.L.M." +
                 "\nDosen Pembahas       \t: Dr. Ir. Kurnia Muludi, M.S.Sc."
 
